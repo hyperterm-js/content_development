@@ -1,2 +1,2 @@
 # content_management
-Content managemen content and references
+Content management content and references
