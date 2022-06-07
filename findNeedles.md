@@ -27,7 +27,7 @@ and another string *haystack*, and searches for *needles* in *haystack*.
 
 ## Uses
 <a name="Uses"/>
-Although quite simple, depending on what you do with them once you find them, **findNeedles** has several practical uses. For instance:
+Although quite simple, depending on what you do with your *needles* once you find them, *findNeedles* has several practical uses. For instance:
 
 1) SEO keyword indexing:
 	- Given a keyword list, we will call your *needles*, and your target files, the larger "haystack", 
@@ -44,15 +44,24 @@ Although quite simple, depending on what you do with them once you find them, **
 
 ## Code reference
 <a name="Code"/>
+
 ```java
-public static void findNeedles(String haystack, String[] needles) {
-if (needles.length > 5) {
-System.err.println("Too many words!");
-} else {
-int[] countArray = new int[needles.length];
-for (int i = 0; i< needles.length; i++) { String[] words=haystack.split("[ \" \'\t\n\b\f\r]", 0);\
-for (int j=0; j
-< words.length; j++) { if (words[j].compareTo(needles[i])==0) { countArray[i]++;\
-} } } for (int j=0; j
-< needles.length; j++) { System.out.println(needles[j] +":" + countArray[j]); } } }
+    public static void findNeedles(String haystack, String[] needles) {
+       if (needles.length > 5) {
+           System.err.println("Too many words!");
+       } else {
+           int[] countArray = new int[needles.length];
+           for (int i = 0; i < needles.length; i++) {
+               String[] words = haystack.split("[ \"\'\t\n\b\f\r]", 0);
+               for (int j = 0; j < words.length; j++) {
+                   if (words[j].compareTo(needles[i]) == 0) {
+                       countArray[i]++;
+                   }
+               }
+           }
+           for (int j = 0; j < needles.length; j++) {
+               System.out.println(needles[j] + ": " + countArray[j]);
+           }
+       }
+   }
 ```
