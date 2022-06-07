@@ -1,11 +1,5 @@
-
-
-#findNeedles
-
-<!-- Confidential + Proprietary -->
-Exercise #1 - findNeedles (required)
-This section contains a short code sample written in
-Java.
+<!-- Confidential + Proprietary Google&#174;-->
+<!-- Exercise #1 - findNeedles (required)-->
 <!-- This exercise has two required parts:-->
 <!--
 1. Write an API reference document that explains
@@ -18,13 +12,24 @@ Suggest ways to improve the code, for example,
 to reduce memory usage or enhance features -->
 
 
-## Overview of findNeedles
+
+# findNeedles
+
+[Overview](#Overview)
+
+[Uses](#Uses)
+
+[Code reference](#Code)
+
+## Overview
+<a name="Overview"/>
 
 **findNeedles** is a simple function that takes two strings, one string *needles* 
 and another string *haystack* and searches for *needles* in *haystack*. 
 
 
-### Uses
+## Uses
+<a name="Uses"/>
 Although quite simple, depending on what you do with the *needles* once 
 you find them, findNeedles has several practical uses. For instance:
 
@@ -41,7 +46,8 @@ you find them, findNeedles has several practical uses. For instance:
 	in your files. 
 
 
-## Code snippet with reference
+## Code reference
+<a name="Code"/>
 
 
 	public static void findNeedles(String haystack, String[] needles) {
