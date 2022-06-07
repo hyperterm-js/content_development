@@ -14,6 +14,8 @@ to reduce memory usage or enhance features -->
 # findNeedles() API
 
 [Overview](#Overview)
+- [findNeedles() example](#Example)
+- [findNeedles() error messages](#Errors)
 
 [Use case example](#Uses)
 
@@ -22,33 +24,43 @@ to reduce memory usage or enhance features -->
 ## Overview <a name="Overview"/>
 
 
-**findNeedles()** is a Java-based API that takes two strings, string *needles*, an array **up to 5 words**,
-and string *haystack* as parameters, and searches for *needles* in *haystack*. **findNeedles()** will return each *needle* with its number of occurences in *haystack*.  
+**findNeedles()** is a Java-based API that takes two strings, *needles*, an array of **up to 5 strings**,
+and *haystack*, a string of unrestricted length, as parameters. It then searches for *needles* in *haystack* and returns each *needle* with the number of times it occured in *haystack*.  
 
-findNeedles() API example:
+### findNeedles() example:<a name="Example"/>
 	
-	String haystack = "Large amounts of rain expected tommorrow.";
-	String[] needles = {"large", "amounts", "rain", "expected", "Friday"};
+	String haystack = "Heavy rain expected tommorrow.";
+	String[] needles = {"Heavy", "rain", "expected", "Friday"};
 	findNeedles(haystack, needles);
 	
 Will return:
 	
-	large: 1
-	amounts: 1
+	Heavy: 1
 	rain: 1
 	expected: 1
 	Friday: 0
 
+### findNeedles() error messages:<a name="Errors"/>
+
+	String haystack = "Heavy rain expected tommorrow.";
+	String[] needles = {"Heavy", "rain", "snow", wind", "expected", "Friday"};
+	findNeedles(haystack, needles);
+	
+Will return:
+	
+	Too many words!
+
+> :memo: **Note:** The array within *String[ ] needles* can only take up to 5 strings. 
 
 ## Use case example<a name="Uses"/>
 
 The following is an example of a **findNeedles()** use case:
 
 - SEO keyword indexing:
-	- Given a keyword list, we will call your *needles*, and your target files, the larger "haystack", 
+	- Given a keyword list as *needles* and your target files, each as a "haystack", 
 	you can iterate over files and compare your list of *needles* using each 
-	file (converted to a string) as a *haystack*. For each *needle*, count them and return 
-	the result to see if your targets are using the list of keywords.
+	file (converted to a string) as a *haystack*. Each *needle* is counted and 
+	you can see if your targets are using the list of keywords.
 	
 
 ## Code reference <a name="Code"/>
