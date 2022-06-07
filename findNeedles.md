@@ -49,7 +49,9 @@ you find them, findNeedles has several practical uses. For instance:
 ## Code reference
 <a name="Code"/>
 
-
+## Code reference
+<a name="Code"/>
+```java
 	public static void findNeedles(String haystack, String[] needles) {
 	if (needles.length > 5) {
 	System.err.println("Too many words!");
@@ -60,3 +62,4 @@ you find them, findNeedles has several practical uses. For instance:
 	< words.length; j++) { if (words[j].compareTo(needles[i])==0) { countArray[i]++;\
 	} } } for (int j=0; j
 	< needles.length; j++) { System.out.println(needles[j] +":" + countArray[j]); } } }
+```
