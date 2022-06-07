@@ -63,3 +63,8 @@ you find them, findNeedles has several practical uses. For instance:
 	} } } for (int j=0; j
 	< needles.length; j++) { System.out.println(needles[j] +":" + countArray[j]); } } }
 ```
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
