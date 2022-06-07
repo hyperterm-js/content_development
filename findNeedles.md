@@ -23,7 +23,7 @@ to reduce memory usage or enhance features -->
 
 
 **findNeedles()** is a Java-based API that takes two strings, string *needles*, an array **up to 5 words**,
-and string *haystack*, and searches for *needles* in *haystack*. **findNeedles()** will return each *needle* with its number of occurences in *haystack*.  
+and string *haystack* as parameters, and searches for *needles* in *haystack*. **findNeedles()** will return each *needle* with its number of occurences in *haystack*.  
 
 findNeedles() API example:
 	
