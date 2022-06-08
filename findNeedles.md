@@ -11,46 +11,68 @@ questions to the person who wrote the code.
 Suggest ways to improve the code, for example,
 to reduce memory usage or enhance features -->
 
-# findNeedles() API
+# findNeedles() API <a name="top"/>
 
-[Overview](#Overview)
+> **On this page:**
+> 
+> [Getting Started](#Overview)
 - [findNeedles() example](#Example)
 - [findNeedles() error messages](#Errors)
+>
+>[Use case example](#Uses)
+>
+>[Code references](#Code)
+- [Method reference](#Method_ref)
+- [Source code reference](#Source_code_ref)
 
-[Use case example](#Uses)
+## Getting Started <a name="Overview"/>
 
-[Code reference](#Code)
+**findNeedles()** is a Java-based API called with two input parameters:
 
-## Overview <a name="Overview"/>
+- `String[ ] needles`: an array of **up to 5 elements**; referred to as *needles* and individually as *needle*
+- `String haystack`: a string of unrestricted length; referred to as *haystack*
 
+**findNeedles()** searches for *needles* in *haystack* and returns each *needle* with the number of times it occured in *haystack*. 
+<a name="case_sensitive"/>
+> 🚨: ***findNeedles() is case-sensitive***
+> 
+> The search between *String[ ] needles* and *String haystack* is ***case sensitive***. 
 
-**findNeedles()** is a Java-based API that takes two strings, *needles*, an array of **up to 5 strings**,
-and *haystack*, a string of unrestricted length, as parameters. It then searches for *needles* in *haystack* and returns each *needle* with the number of times it occured in *haystack*.  
+[Back to ***On this page***](#top)
 
 ### findNeedles() example:<a name="Example"/>
 	
-	String haystack = "Heavy rain expected tommorrow.";
-	String[] needles = {"Heavy", "rain", "expected", "Friday"};
-	findNeedles(haystack, needles);
+	String haystack = "Heavy rain and heavy snow expected tommorrow.";
+	String[] needles = {"Heavy", "rain", "snow", "expected", "Friday"};
+	findNeedles(String haystack, String[] needles);
 	
-Will return:
+Returns:
 	
 	Heavy: 1
 	rain: 1
+	snow: 1 
 	expected: 1
 	Friday: 0
+	
+In this example, `Heavy` returns `1` because it appears twice in *haystack* but only [once capitalized as in the *needle*](#case_sensitive). Both `rain` and `expected` return `1`, because they each appear once. `Friday` is returned as `0`, as it doesn't appear in *haystack*.     
+
+[Back to ***On this page***](#top)
 
 ### findNeedles() error messages:<a name="Errors"/>
 
-	String haystack = "Heavy rain expected tommorrow.";
-	String[] needles = {"Heavy", "rain", "snow", wind", "expected", "Friday"};
-	findNeedles(haystack, needles);
+	String haystack = "Heavy rain and heavy snow expected tommorrow.";
+	String[] needles = {"Heavy", "heavy", "rain", "snow", "expected", "Friday"};
+	findNeedles(String haystack, String[] needles);
 	
-Will return:
+Returns:
 	
 	Too many words!
 
-> :memo: **Note:** The array within *String[ ] needles* can only take up to 5 strings. 
+> 🚨: ***"Too many words!" error message:***
+> 
+> The array within *String[ ] needles* can only take up to 5 elements. 
+
+[Back to ***On this page***](#top)
 
 ## Use case example<a name="Uses"/>
 
@@ -60,12 +82,23 @@ The following is an example of a **findNeedles()** use case:
 	- Given a keyword list as *needles* and your target files, each as a "haystack", 
 	you can iterate over files and compare your list of *needles* using each 
 	file (converted to a string) as a *haystack*. Each *needle* is counted and 
-	you can see if your targets are using the list of keywords.
+	you can see the frequency your targets use the list of keywords.
 	
+[Back to ***On this page***](#top)
 
-## Code reference <a name="Code"/>
+## Code references <a name="Code"/>
 
+### Method reference <a name="Method_ref"/>
 
+method | findNeedles()      
+------ | ------
+Description | Java-based API that searches for array elements in a string and returns the frequency for each element found
+Parameters | `String[ ] needles`: an array of **up to 5 elements**   <br> `String haystack`: a string of unrestricted length
+Example | String haystack = "Heavy rain and heavy snow expected tommorrow.";<br> String[] needles = {"Heavy", "rain", "snow", "expected", "Friday"};<br> findNeedles(String haystack, String[] needles);
+
+[Back to ***On this page***](#top)
+
+### Source code reference <a name="Source_code_ref"/>
 ```java
     public static void findNeedles(String haystack, String[] needles) {
        if (needles.length > 5) {
@@ -86,3 +119,4 @@ The following is an example of a **findNeedles()** use case:
        }
    }
 ```
+[Back to ***On this page***](#top)
