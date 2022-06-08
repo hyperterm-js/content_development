@@ -29,20 +29,20 @@ to reduce memory usage or enhance features -->
 
 **findNeedles()** is a Java-based API called with two input parameters:
 
-- `String[ ] needles`: an array of **up to 5 elements**; referred to as *needles* and individually as *needle*
+- `String[] needles`: an array of **up to 5 elements**; referred to as *needles* and individually as *needle*
 - `String haystack`: a string of unrestricted length; referred to as *haystack*
 
-**findNeedles()** searches for *needles* in *haystack* and returns each *needle* with the number of times it occured in *haystack*. 
+**findNeedles()** searches for *needles* in *haystack* and returns each *needle* with the number of times it occurred in *haystack*. 
 <a name="case_sensitive"/>
 > 🚨: ***findNeedles() is case-sensitive***
 > 
-> The search between *String[ ] needles* and *String haystack* is ***case sensitive***. 
+> The search between *String[] needles* and *String haystack* is ***case-sensitive***. 
 
 [Back to ***On this page***](#top)
 
 ### findNeedles() example:<a name="Example"/>
 	
-	String haystack = "Heavy rain and heavy snow expected tommorrow.";
+	String haystack = "Heavy rain and heavy snow expected tomorrow.";
 	String[] needles = {"Heavy", "rain", "snow", "expected", "Friday"};
 	findNeedles(String haystack, String[] needles);
 	
@@ -60,7 +60,7 @@ In this example, `Heavy` returns `1` because it appears twice in *haystack* but 
 
 ### findNeedles() error messages:<a name="Errors"/>
 
-	String haystack = "Heavy rain and heavy snow expected tommorrow.";
+	String haystack = "Heavy rain and heavy snow expected tomorrow.";
 	String[] needles = {"Heavy", "heavy", "rain", "snow", "expected", "Friday"};
 	findNeedles(String haystack, String[] needles);
 	
@@ -70,7 +70,7 @@ Returns:
 
 > 🚨: ***"Too many words!" error message:***
 > 
-> The array within *String[ ] needles* can only take up to 5 elements. 
+> The array within *String[] needles* can only take up to 5 elements. 
 
 [Back to ***On this page***](#top)
 
@@ -93,8 +93,8 @@ The following is an example of a **findNeedles()** use case:
 method | findNeedles()      
 ------ | ------
 Description | Java-based API that searches for array elements in a string and returns the frequency for each element found
-Parameters | `String[ ] needles`: an array of **up to 5 elements**   <br> `String haystack`: a string of unrestricted length
-Example | String haystack = "Heavy rain and heavy snow expected tommorrow.";<br> String[] needles = {"Heavy", "rain", "snow", "expected", "Friday"};<br> findNeedles(String haystack, String[] needles);
+Parameters | `String[] needles`: an array of **up to 5 elements**   <br> `String haystack`: a string of unrestricted length
+Example | ```String[] needles = {"Heavy", "rain", "snow", "expected", "Friday"};```<br>```String haystack = "Heavy rain and heavy snow expected tomorrow.";```<br>  ```findNeedles(String haystack, String[] needles);```
 
 [Back to ***On this page***](#top)
 
