@@ -27,7 +27,7 @@ to reduce memory usage or enhance features -->
 
 ## Getting Started <a name="Overview"/>
 
-**findNeedles()** is a Java-based API called with two input parameters:
+**findNeedles()** is a Java-based API called with two mandatory input parameters:
 
 - `String[] needles`: an array of **up to 5 elements**; referred to as *needles* and individually as *needle*
 - `String haystack`: a string of unrestricted length; referred to as *haystack*
@@ -79,8 +79,8 @@ Returns:
 The following is an example of a **findNeedles()** use case:
 
 - SEO keyword indexing:
-	- Given a keyword list as *needles* and your target files, each as a "haystack", 
-	you can iterate over files and compare your list of *needles* using each 
+	- Given a keyword list as *needles* and your files as *haystacks*, 
+	you can iterate over the files and compare your list of *needles* using each 
 	file (converted to a string) as a *haystack*. Each *needle* is counted and 
 	you can see the frequency your targets use the list of keywords.
 	
@@ -93,8 +93,8 @@ The following is an example of a **findNeedles()** use case:
 method | findNeedles()      
 ------ | ------
 Description | Java-based API that searches for array elements in a string and returns the frequency for each element found
-Parameters | `String[] needles`: an array of **up to 5 elements**   <br> `String haystack`: a string of unrestricted length
-Example | ```String[] needles = {"Heavy", "rain", "snow", "expected", "Friday"};```<br>```String haystack = "Heavy rain and heavy snow expected tomorrow.";```<br>  ```findNeedles(String haystack, String[] needles);```
+Parameters | Mandatory; `String haystack`: a string of unrestricted length <br> Mandatory; `String[] needles`: an array of **up to 5 elements**   
+Example | ```String haystack = "Heavy rain and heavy snow expected tomorrow.";```<br>  ```String[] needles = {"Heavy", "rain", "snow", "expected", "Friday"};```<br> ```findNeedles(String haystack, String[] needles);```
 
 [Back to ***On this page***](#top)
 
