@@ -37,7 +37,11 @@ to reduce memory usage or enhance features -->
 > :memo: ***findNeedles() is case-sensitive and space-sensitive***
 > <a name="case_sensitive"/>
 > 
-> Searches between `String[] needles` and `String haystack` are ***case-sensitive*** and ***space-sensitive***. Positive results are only returned if both the case of words and the spacing of phrases match exactly. 
+> Positive results are only returned if both the case of words and phrase spacing match exactly.
+
+> :memo: ***Leaving a parameter blank***
+> 
+> If you do not input both parameters, the output will be null. 
 
 [Back to ***On this page***](#top)
 
@@ -57,16 +61,13 @@ Returns:
 	
 In this example, `Heavy` returns `1`, because it appears twice in *haystack* but only [once capitalized as in the *needle*](#case_sensitive). Both `rain` and `expected` return `1`, because they each appear once. `Friday` is returned as `0`, because it doesn't appear in *haystack*.
 
-<a name="case_sensitive"/>
-
-> :memo: ***Leaving a parameter blank***
-> 
-> If you do not input both parameters, the output will be null. 
-
-
 [Back to ***On this page***](#top)
 
 ### findNeedles() error messages:<a name="Errors"/>
+
+> 🚨 ***"Too many words!" error message:***
+> 
+> The array within *String[] needles* can only take up to 5 elements. 
 
 	String haystack = "Heavy rain and heavy snow expected tomorrow.";
 	String[] needles = {"Heavy", "heavy", "rain", "snow", "expected", "Friday"};
@@ -76,9 +77,6 @@ Returns:
 	
 	Too many words!
 
-> 🚨 ***"Too many words!" error message:***
-> 
-> The array within *String[] needles* can only take up to 5 elements. 
 
 [Back to ***On this page***](#top)
 
@@ -100,14 +98,11 @@ The following is an example of a **findNeedles()** use case:
 
 Method | findNeedles()      
 ------ | ------
-Description | Java-based API that searches for array elements in a string and returns the frequency for each element found
-Parameters | Mandatory; `String haystack`: a string of unrestricted length <br> Mandatory; `String[] needles`: an array of **up to 5 elements**   
-Example | ```String haystack = "Heavy rain and heavy snow expected tomorrow.";```<br>  ```String[] needles = {"Heavy", "rain", "snow", "expected", "Friday"};```<br> ```findNeedles(String haystack, String[] needles);```
+Description | Java-based API that performs ***case-sensitive*** and ***space-sensitive*** searches for array elements in a string and returns the frequency for each element found
+Parameters | Mandatory; `String haystack`: A string of unrestricted length. <br> Mandatory; `String[] needles`: An array of **up to 5 elements**.<br> 
+Error messages | `Too many words!`: More than 5 elements were sent as part of `String[] needles`.
 
-> :memo: ***findNeedles() is case-sensitive and space-sensitive***
-> <a name="case_sensitive"/>
-> 
-> Searches between `String[] needles` and `String haystack` are ***case-sensitive*** and ***space-sensitive***. Positive results are only returned if both the case of words and the spacing of phrases match exactly. 
+For usage, see [findNeedles() example](#Example).
 
 
 [Back to ***On this page***](#top)
