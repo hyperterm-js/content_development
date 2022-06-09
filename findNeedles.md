@@ -27,16 +27,17 @@ to reduce memory usage or enhance features -->
 
 ## Getting Started <a name="Overview"/>
 
-**findNeedles()** is a Java-based API called with two mandatory input parameters:
+**findNeedles()** is a Java-based API called with two mandatory user input parameters:
 
-- `String[] needles`: an array of **up to 5 elements**; referred to as *needles* and individually as *needle*
-- `String haystack`: a string of unrestricted length; referred to as *haystack*
+- `String[] needles`: an array of **up to 5 elements**; referred to as *needles* or *needle*
+- `String haystack`: a string of unrestricted length; referred to as *haystacks* or *haystack*
 
 **findNeedles()** searches for *needles* in *haystack* and returns each *needle* with the number of times it occurred in *haystack*. 
-<a name="case_sensitive"/>
-> 🚨: ***findNeedles() is case-sensitive***
+
+> :memo: ***findNeedles() is case-sensitive and space-sensitive***
+> <a name="case_sensitive"/>
 > 
-> The search between *String[] needles* and *String haystack* is ***case-sensitive***. 
+> Searches between `String[] needles` and `String haystack` are ***case-sensitive*** and ***space-sensitive***. Positive results are only returned if both the case of words and the spacing of phrases match exactly. 
 
 [Back to ***On this page***](#top)
 
@@ -54,7 +55,14 @@ Returns:
 	expected: 1
 	Friday: 0
 	
-In this example, `Heavy` returns `1` because it appears twice in *haystack* but only [once capitalized as in the *needle*](#case_sensitive). Both `rain` and `expected` return `1`, because they each appear once. `Friday` is returned as `0`, as it doesn't appear in *haystack*.     
+In this example, `Heavy` returns `1`, because it appears twice in *haystack* but only [once capitalized as in the *needle*](#case_sensitive). Both `rain` and `expected` return `1`, because they each appear once. `Friday` is returned as `0`, because it doesn't appear in *haystack*.
+
+<a name="case_sensitive"/>
+
+> :memo: ***Leaving a parameter blank***
+> 
+> If you do not input both parameters, the output will be null. 
+
 
 [Back to ***On this page***](#top)
 
@@ -68,7 +76,7 @@ Returns:
 	
 	Too many words!
 
-> 🚨: ***"Too many words!" error message:***
+> 🚨 ***"Too many words!" error message:***
 > 
 > The array within *String[] needles* can only take up to 5 elements. 
 
@@ -90,11 +98,17 @@ The following is an example of a **findNeedles()** use case:
 
 ### Method reference <a name="Method_ref"/>
 
-method | findNeedles()      
+Method | findNeedles()      
 ------ | ------
 Description | Java-based API that searches for array elements in a string and returns the frequency for each element found
 Parameters | Mandatory; `String haystack`: a string of unrestricted length <br> Mandatory; `String[] needles`: an array of **up to 5 elements**   
 Example | ```String haystack = "Heavy rain and heavy snow expected tomorrow.";```<br>  ```String[] needles = {"Heavy", "rain", "snow", "expected", "Friday"};```<br> ```findNeedles(String haystack, String[] needles);```
+
+> :memo: ***findNeedles() is case-sensitive and space-sensitive***
+> <a name="case_sensitive"/>
+> 
+> Searches between `String[] needles` and `String haystack` are ***case-sensitive*** and ***space-sensitive***. Positive results are only returned if both the case of words and the spacing of phrases match exactly. 
+
 
 [Back to ***On this page***](#top)
 
