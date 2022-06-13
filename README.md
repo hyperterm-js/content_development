@@ -1,4 +1,4 @@
-# HyperTerm
+# HyperTerm content development
 HyperTerm provides various front-end and back-end content management solutions and consulting.
 
 Front-end tasks include:
